@@ -60,6 +60,7 @@
                 <posy>40</posy>
                 <include condition="Skin.HasSetting(EnableTouchSupport)">close_button</include>
             </control>
+
             <!--Header-->
             <control type="label">
                 <description>Heading</description>
@@ -72,6 +73,7 @@
                 <align>left</align>
 				<height>100</height>
             </control>
+
 			<!-- program title -->
 			<control type="label">
 				<posx>700</posx>
@@ -83,6 +85,7 @@
                 <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 				<label>$INFO[ListItem.Title]</label>
 			</control>
+
             <control type="group">
                 <posx>680</posx>
                 <posy>220</posy>
@@ -215,6 +218,7 @@
                     <texture>$INFO[Window(home).Property(SkinHelper.ListItem.Art.Poster)]</texture>
                     <aspectratio align="right" aligny="top">keep</aspectratio>
                 </control>
+
             <!--Button Group-->
        		    <control type="grouplist" id="9000">
                     <posx>500</posx>
@@ -224,20 +228,23 @@
 		 			<align>center</align>
 		 			<itemgap>14</itemgap>
 		 			<orientation>horizontal</orientation>
-            <!-- Change Channel Button -->
+
+             <!-- Change Channel Button -->
                 <control type="button" id="5">
 					<description>Switch button</description>
 					<label>Change Channel</label>
 					<width>265</width>
 	    			<include>DialogButtonOther</include>
                 </control>
-            <!-- Record Button -->
+
+             <!-- Record Button -->
 				<control type="button" id="6">
 					<description>Record button</description>
 					<visible>!Window.IsActive(tvrecordings)</visible>
 					<width>265</width>
 					<include>DialogButtonOther</include>
                  </control>
+
             <!-- Add Time Button -->
                 <control type="button" id="9">
 					<description>Add timer button</description>
@@ -245,13 +252,14 @@
 					<width>265</width>
 					<include>DialogButtonOther</include>
 				</control>
+
             <!-- Switch Timer Button -->
                 <control type="button" id="31">
                     <width>265</width>
                     <posy>500</posy>
                     <label>Add Reminder</label>
-                     <onclick>RunScript(service.kn.switchtimer,action=add,channel=$INFO[ListItem.ChannelName],icon=$INFO[ListItem.Icon],date=$INFO[ListItem.Date],title=$INFO[ListItem.Title])</onclick>
-                     <onclick>Action(Close,10600)</onclick>
+                    <onclick>RunScript(service.kn.switchtimer,action=add,channel=$INFO[ListItem.ChannelName],icon=$INFO[ListItem.Icon],date=$INFO[ListItem.Date],title=$INFO[ListItem.Title])</onclick>
+                    <onclick>Action(Close,10600)</onclick>
                     <include>DialogButtonOther</include>
                     <visible>System.HasAddon(service.kn.switchtimer)</visible>
                 </control>
