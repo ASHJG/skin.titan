@@ -60,7 +60,6 @@
                 <posy>40</posy>
                 <include condition="Skin.HasSetting(EnableTouchSupport)">close_button</include>
             </control>
-
             <!--Header-->
             <control type="label">
                 <description>Heading</description>
@@ -73,7 +72,6 @@
                 <align>left</align>
 				<height>100</height>
             </control>
-
 			<!-- program title -->
 			<control type="label">
 				<posx>700</posx>
@@ -85,7 +83,6 @@
                 <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
 				<label>$INFO[ListItem.Title]</label>
 			</control>
-
             <control type="group">
                 <posx>680</posx>
                 <posy>220</posy>
@@ -177,91 +174,98 @@
                     <enable>false</enable>
                 </control>
             </control>
-                <control type="image">
-                   <posx>680</posx>
-                    <posy>545</posy>
-                    <width>1200</width>
-                    <height>371</height>
-                    <texture border="5">dialogs/default/inner.png</texture>
-                </control>
-                <control type="textbox" id="400">
-                    <description>Plot value with no poster present</description>
-                    <posx>700</posx>
-                    <posy>565</posy>
-                    <width>1160</width>
-                    <height>321</height>
-                    <align>justify</align>
-                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-				    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
-                    <pagecontrol>60</pagecontrol>
-                    <label fallback="161">$VAR[Plots]</label>
-                    <visible>IsEmpty(Window(home).Property(SkinHelper.ListItem.Art.Poster))</visible>
-                </control>
-                <control type="textbox" id="400">
-                    <description>Plot value with poster present</description>
-                    <posx>700</posx>
-                    <posy>565</posy>
-                    <width>820</width>
-                    <height>321</height>
-                    <align>justify</align>
-                    <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
-				    <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
-                    <pagecontrol>60</pagecontrol>
-                    <label fallback="161">$VAR[Plots]</label>
-                    <visible>!IsEmpty(Window(home).Property(SkinHelper.ListItem.Art.Poster))</visible>
-                </control>
-                <control type="image">
-                    <right>50</right>
-                    <posy>555</posy>
-                    <width>300</width>
-                    <height>351</height>
-                    <texture>$INFO[Window(home).Property(SkinHelper.ListItem.Art.Poster)]</texture>
-                    <aspectratio align="right" aligny="top">keep</aspectratio>
-                </control>
-
+            <control type="image">
+                <posx>680</posx>
+                <posy>545</posy>
+                <width>1200</width>
+                <height>371</height>
+                <texture border="5">dialogs/default/inner.png</texture>
+            </control>
+            <control type="textbox" id="400">
+                <description>Plot value with no poster present</description>
+                <posx>700</posx>
+                <posy>565</posy>
+                <width>1160</width>
+                <height>321</height>
+                <align>justify</align>
+                <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                <pagecontrol>60</pagecontrol>
+                <label fallback="161">$VAR[Plots]</label>
+                <visible>IsEmpty(Window(home).Property(SkinHelper.ListItem.Art.Poster))</visible>
+            </control>
+            <control type="textbox" id="400">
+                <description>Plot value with poster present</description>
+                <posx>700</posx>
+                <posy>565</posy>
+                <width>820</width>
+                <height>321</height>
+                <align>justify</align>
+                <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
+                <pagecontrol>60</pagecontrol>
+                <label fallback="161">$VAR[Plots]</label>
+                <visible>!IsEmpty(Window(home).Property(SkinHelper.ListItem.Art.Poster))</visible>
+            </control>
+            <control type="image">
+                <right>50</right>
+                <posy>555</posy>
+                <width>300</width>
+                <height>351</height>
+                <texture>$INFO[Window(home).Property(SkinHelper.ListItem.Art.Poster)]</texture>
+                <aspectratio align="right" aligny="top">keep</aspectratio>
+            </control>
             <!--Button Group-->
-       		    <control type="grouplist" id="9000">
-                    <posx>500</posx>
-                    <posy>940</posy>
-	 			    <width>1350</width>
-    		 		<onup condition="Container(400).HasNext | Container(400).HasPrevious">60</onup>
+       		<control type="grouplist" id="9000">
+            <posx>500</posx>
+                <posy>940</posy>
+	 			<width>1350</width>
+
+		 		<onup condition="Container(400).HasNext | Container(400).HasPrevious">60</onup>
 		 			<align>center</align>
 		 			<itemgap>14</itemgap>
 		 			<orientation>horizontal</orientation>
 
-             <!-- Change Channel Button -->
                 <control type="button" id="5">
-					<description>Switch button</description>
-					<label>Change Channel</label>
-					<width>265</width>
-	    			<include>DialogButtonOther</include>
+						<description>Switch button</description>
+						<label>Change Channel</label>
+						<width>265</width>
+					<include>DialogButtonOther</include>
+                    <visible>Window.IsActive(PVRGuideInfo)</visible>
+					</control>
+
+				<control type="button" id="6">
+						<description>Record button</description>
+						<width>265</width>
+					<include>DialogButtonOther</include>
+                    <visible>Window.IsActive(PVRGuideInfo)</visible>
+                    </control>
+
+                <control type="button" id="8">
+                        <!--play Recording-->
+                        <width>265</width>
+                        <label>19687</label>
+                    <include>DialogButtonOther</include>
+                    <visible>Window.IsActive(PVRRecordingInfo)</visible>
                 </control>
 
-             <!-- Record Button -->
-				<control type="button" id="6">
-					<description>Record button</description>
-					<visible>!Window.IsActive(tvrecordings)</visible>
-					<width>265</width>
-					<include>DialogButtonOther</include>
-                 </control>
-
-            <!-- Add Time Button -->
                 <control type="button" id="9">
-					<description>Add timer button</description>
-					<label>Record Series</label>
-					<width>265</width>
+						<description>Add timer button</description>
+						<label>Record Series</label>
+						<width>265</width>
 					<include>DialogButtonOther</include>
-				</control>
-
-            <!-- Switch Timer Button -->
+                    <visible>Window.IsActive(PVRGuideInfo)</visible>
+					</control>
+                      <!-- Switch Timer Button -->
                 <control type="button" id="31">
-                    <width>265</width>
-                    <posy>500</posy>
-                    <label>Add Reminder</label>
-                    <onclick>RunScript(service.kn.switchtimer,action=add,channel=$INFO[ListItem.ChannelName],icon=$INFO[ListItem.Icon],date=$INFO[ListItem.Date],title=$INFO[ListItem.Title])</onclick>
-                    <onclick>Action(Close,10600)</onclick>
+                <width>265</width>
+                <posy>500</posy>
+                <label>Add Reminder</label>
+                     <onclick>RunScript(service.kn.switchtimer,action=add,channel=$INFO[ListItem.ChannelName],icon=$INFO[ListItem.Icon],date=$INFO[ListItem.Date],title=$INFO[ListItem.Title])</onclick>
+                     <onclick>Action(Close,10600)</onclick>
                     <include>DialogButtonOther</include>
                     <visible>System.HasAddon(service.kn.switchtimer)</visible>
+                    <visible>Window.IsActive(PVRGuideInfo)</visible>
                 </control>
             </control>
         </control>
