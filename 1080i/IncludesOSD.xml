@@ -26,7 +26,7 @@
 				<aspectratio align="left" aligny="top">keep</aspectratio>
 				<visible>!VideoPlayer.Content(Movies)</visible>
 			</control>
-			
+
 			<!-- discart -->
 			<control type="image">
 				<posx>150</posx>
@@ -42,7 +42,7 @@
 				<visible>VideoPlayer.Content(Movies) + !IsEmpty(Player.Art(poster))</visible>
 				<visible>!Skin.HasSetting(HideOSDDisc)</visible>
 			</control>
-			
+
 			<control type="image">
 				<!--Movie-->
 				<posx>110</posx>
@@ -86,7 +86,7 @@
 				<posy>270</posy>
 				<include>mediaflags</include>
 			</control>
-			
+
 			<!--Time-->
 			<control type="label">
 				<!--Left Play Time-->
@@ -162,7 +162,7 @@
 					<textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor><shadowcolor>$INFO[Skin.String(ViewDetailsHighlightTextShadowColor)]</shadowcolor>
 				</control>
 			</control>
-			
+
 			<!--OSD: right side below clock-->
 				<control type="label">
 					<!--PlayerActionLabel-->
@@ -179,7 +179,7 @@
 					<label>$VAR[PlayerActionLabel]</label>
 					<visible>!StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
 				</control>
-				
+
 				<control type="image">
 					<visible>player.paused</visible>
 					<animation delay="150" time="300" effect="fade">Visible</animation>
@@ -213,8 +213,8 @@
 					<texture flipx="true">osd/osd_ff.png</texture>
 					<colordiffuse>$INFO[Skin.String(OSDPrimaryTextColor)]</colordiffuse>
 				</control>
-		
-			
+
+
 			<!--Process/Seekbar-->
 			<control type="progress" id="1">
 				<description>ProgressbarCache</description>
@@ -232,10 +232,10 @@
 				<info>Player.Progress</info>
 				<visible>true</visible>
 			</control>
-			
+
 		</control>
 	</include>
-    
+
 	<include name="OSDPanelModern">
 		<control type="group">
 			<bottom>0</bottom>
@@ -263,7 +263,7 @@
 				<visible>Player.HasAudio</visible>
 				<visible>!Skin.HasSetting(HideOSDDisc)</visible>
 			</control>
-			
+
 			<control type="image">
 				<!--Music bg-->
 				<posx>20</posx>
@@ -309,7 +309,7 @@
 				<aspectratio align="left" aligny="center" scalediffuse="false">keep</aspectratio>
 				<visible>Player.HasAudio</visible>
 			</control>
-			
+
 			<!-- discart -->
 			<control type="image">
 				<posx>100</posx>
@@ -326,7 +326,7 @@
 				<visible>Player.HasVideo + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster)) | !IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Poster))]</visible>
 				<visible>!Skin.HasSetting(HideOSDDisc)</visible>
 			</control>
-			
+
 			<!--Cover movies - poster-->
 			<control type="image">
 				<posx>60</posx>
@@ -338,7 +338,7 @@
 				<aspectratio align="left" aligny="center">keep</aspectratio>
 				<visible>Player.HasVideo + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster)) | !IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Poster))]</visible>
 			</control>
-			
+
 			<!--Cover livetv or no poster image-->
 			<control type="image">
 				<posx>60</posx>
@@ -350,7 +350,7 @@
 				<aspectratio align="center" aligny="center">keep</aspectratio>
 				<visible>Player.HasVideo + IsEmpty(Player.Art(tvshow.poster)) + IsEmpty(Player.Art(poster)) + IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Poster))</visible>
 			</control>
-			
+
 			<control type="group">
 				<animation effect="slide" end="50" time="0" condition="player.hasaudio + !Skin.HasSetting(HideOSDDisc)">Conditional</animation>
 				<!-- OSDLabel1 -->
@@ -457,7 +457,7 @@
 					<visible>!IsEmpty(Player.Duration)</visible>
 					<visible>!StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
 				</control>
-				
+
 			<!-- media flags -->
 			<control type="group">
                 <posx>400</posx>
@@ -489,7 +489,7 @@
 			<colordiffuse>$INFO[Skin.String(OSDPrimaryTextColor)]</colordiffuse>
 			<texture fallback="leftrating/rating0.png">$INFO[Player.StarRating,leftrating/]</texture>
 		</control>
-			
+
 		    <!--OSD: right side below clock-->
 		    <control type="label">
 				<!--PlayerActionLabel-->
@@ -506,7 +506,7 @@
 				<label>$VAR[PlayerActionLabel]</label>
 				<visible>!StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
 			</control>
-			
+
 			<control type="label">
 				<!--Total duration-->
 				<animation type="Conditional" condition="player.paused | player.forwarding | player.rewinding">
@@ -523,7 +523,7 @@
 				<visible>!IsEmpty(Player.Duration)</visible>
 				<visible>!StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
 			</control>
-            
+
             <!-- OSD label 3 -->
             <control type="label">
                 <right>60</right>
@@ -535,7 +535,7 @@
                 <textcolor>$VAR[mediaFlagsFontColor]</textcolor>
                 <label>$VAR[OSDLabel3]</label>
             </control>
-			
+
 			<control type="image">
 				<visible>player.paused</visible>
 				<animation delay="150" time="300" effect="fade">Visible</animation>
@@ -591,7 +591,7 @@
 
 		</control>
     </include>
-	
+
 	<include name="OSDPanelModernSlim">
 		<control type="group">
 			<bottom>0</bottom>
@@ -605,7 +605,7 @@
 				<texture border="5">$VAR[osdpanelimage]</texture>
 				<colordiffuse>$INFO[Skin.String(OSDPanelColor)]</colordiffuse>
 			</control>
-			
+
 			<!--Cover movies - poster-->
 			<control type="image" id="1">
 				<posx>40</posx>
@@ -617,7 +617,7 @@
 				<aspectratio align="left" aligny="bottom">stretch</aspectratio>
 				<visible>[!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster)) | !IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Poster))]</visible>
 			</control>
-			
+
 			<!--Cover no poster-->
 			<control type="image">
 				<posx>40</posx>
@@ -629,7 +629,7 @@
 				<aspectratio align="left" aligny="bottom">keep</aspectratio>
 				<visible>IsEmpty(Player.Art(poster)) + IsEmpty(Player.Art(tvshow.poster)) + IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Poster))</visible>
 			</control>
-			
+
 			<!--clearlogo-->
 			<control type="image" id="1">
 				<posx>250</posx>
@@ -641,7 +641,7 @@
 				<aspectratio align="left" aligny="bottom">keep</aspectratio>
 				<visible>!VideoPlayer.Content(livetv) + [!IsEmpty(Player.Art(poster)) | !IsEmpty(Player.Art(tvshow.poster))]</visible>
 			</control>
-			
+
 			<control type="group">
 				<!-- OSDLabel1 -->
                 <control type="label">
@@ -782,7 +782,7 @@
 
 		</control>
     </include>
-	
+
     <include name="OSDPanelModernSlimMusic">
 		<control type="group">
 			<bottom>0</bottom>
@@ -808,7 +808,7 @@
 				<animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
 				<texture background="true" fallback="defaultcovers/cd_medium.png" diffuse="diffuse/cdmask_new.png">$VAR[PlayerDiscArtImage]</texture>
 			</control>
-			
+
 			<control type="image">
 				<!--Music bg-->
 				<posx>20</posx>
@@ -962,7 +962,7 @@
 					<visible>!StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
 				</control>
 			</control>
-            
+
             <!--Clock
             <control type="label">
                 <right>40</right>
@@ -976,7 +976,7 @@
                 <textcolor>$INFO[Skin.String(OSDSecondaryTextColor)]</textcolor>
                 <shadowcolor>$INFO[Skin.String(OSDSecondaryTextShadowColor)]</shadowcolor>
             </control>-->
-            
+
             <!--Stars music-->
             <control type="image">
                 <visible>Window.IsActive(visualisation)</visible>
@@ -1004,13 +1004,13 @@
                 <visible>![Window.IsActive(musicosd) + !Window.IsVisible(OSDAudioSettings)]</visible>
                 <include>animation_fade_visible_hidden</include>
 			</control>
-            
+
 		</control>
     </include>
-		
+
 	<include name="MusicOSDClassic">
 		<include>animation_fade_visible_hidden</include>
-		
+
 		<!--Player States-->
 		<control type="image">
 			<visible>player.paused</visible>
@@ -1143,8 +1143,8 @@
 			<label>RWx32</label>
 			<visible>player.rewinding32x</visible>
 		</control>
-		
-		
+
+
 		<control type="group">
 			<bottom>20</bottom>
 			<height>376</height>
@@ -1154,9 +1154,9 @@
 				<width>1560</width>
 				<texture>osd/classic/osd_panel.png</texture>
 			</control>
-			
-			
-			
+
+
+
 			<!--Cover-->
 			<control type="image">
 				<!--No Movie-->
@@ -1226,7 +1226,7 @@
 				<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
 				<label>- $INFO[Player.TimeRemaining]</label>
 			</control>
-			
+
 			<control type="grouplist">
 				<!--Clock-->
 				<posx>1265</posx>
@@ -1265,7 +1265,7 @@
 					<textcolor>$INFO[Skin.String(GeneralHighlightTextColor)]</textcolor>
 				</control>
 			</control>
-			
+
 			<control type="grouplist" id="200">
 				<!--OSD-->
 				<posx>540</posx>
@@ -1381,7 +1381,7 @@
 					<onclick>XBMC.PlayerControl(Random)</onclick>
 				</control>
 			</control>
-			
+
 			<!--Process/Seekbar-->
 			<control type="progress" id="23">
 				<description>Progress Bar</description>
@@ -1393,7 +1393,7 @@
 			</control>
 		</control>
 	</include>
-    
+
 	<include name="OSDButtonsClassic">
 		<control type="grouplist" id="100">
 			<!--Settings-->
@@ -1649,9 +1649,9 @@
             <textureslidernibfocus border="5" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">diffuse/panel.png</textureslidernibfocus>
         </control>
 	</include>
-	
+
 	<include name="OSDButtonsModern">
-        
+
         <!-- close dialog -->
         <control type="group">
             <include>animation_fade_visible_hidden</include>
@@ -1668,7 +1668,7 @@
             </animation>
             <animation effect="slide" end="22" time="0" condition="Skin.HasSetting(UseSlimOSDPanel)">Conditional</animation>
         </control>
-        
+
         <!-- subtitle selection -->
         <control type="grouplist" id="1410">
             <visible>StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
@@ -1688,7 +1688,7 @@
             <ondown>104</ondown>
             <ondown>200</ondown>
             <onback>200</onback>
-            
+
             <control type="button" id="1402">
                 <width>359</width>
                 <include>DialogButtonOther</include>
@@ -1725,12 +1725,12 @@
                 <onclick>ActivateWindow(SubtitleSearch)</onclick>
             </control>
         </control>
-        
+
         <!--SeekBar -->
         <include condition="Skin.HasSetting(UseSlimOSDPanel) + player.hasvideo">SeekBar_Slim</include>
         <include condition="!Skin.HasSetting(UseSlimOSDPanel) + player.hasvideo">SeekBar_Normal</include>
-        
-        <!-- OSD buttons -->            
+
+        <!-- OSD buttons -->
         <include name="OSDButtons_Layout" content="OSDButtons_Layout" condition="Skin.String(osd_buttonstyle,rounded)">
             <param name="size" value="75" />
             <param name="gap" value="7" />
@@ -1759,9 +1759,9 @@
             <param name="posleft" value="370" />
             <param name="posbottom" value="-20" />
         </include>
-			
+
 	</include>
-	
+
     <include name="OSDButtons_Layout">
 		<control type="grouplist" id="200">
 			<posx>$PARAM[posleft]</posx>
@@ -2120,7 +2120,7 @@
 		</control>
 
 	</include>
-	
+
 	<include name="SeekBar_Slim">
 		<control type="slider" id="87">
 			<description>Seekbar</description>
@@ -2166,7 +2166,7 @@
 			<visible>!StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
 		</control>
 	</include>
-	
+
 	<include name="SeekBar_Normal">
 		<control type="slider">
 			<description>Seekbar</description>
@@ -2180,7 +2180,7 @@
 			<textureslidernib>colors/color_transparent.png</textureslidernib>
 			<textureslidernibfocus border="5" colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">diffuse/panel.png</textureslidernibfocus>
 			<visible>!StringCompare(Window(Home).Property(subtitlemenu), show) + !VideoPlayer.Content(LiveTV)</visible>
-            <animation effect="slide" end="50" time="0" condition="player.hasaudio + !Skin.HasSetting(HideOSDDisc)">Conditional</animation>     		
+            <animation effect="slide" end="50" time="0" condition="player.hasaudio + !Skin.HasSetting(HideOSDDisc)">Conditional</animation>
         </control>
 		<control type="image">
 			<description>Progress Bar Border</description>
@@ -2194,7 +2194,7 @@
             <animation effect="slide" end="50" time="0" condition="player.hasaudio + !Skin.HasSetting(HideOSDDisc)">Conditional</animation>
 		</control>
 	</include>
-    
+
     <include name="Small_OSD_Seek_Panel">
         <control type="group">
             <!-- small panel if OSD disabled on seek -->
@@ -2208,7 +2208,7 @@
 				<height>150</height>
 				<texture border="5">diffuse/panel.png</texture>
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
-				
+
 			</control>
 			<control type="image">
 				<left>10</left>
@@ -2218,7 +2218,7 @@
 				<texture border="5">diffuse/panel.png</texture>
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
 			</control>
-			
+
 			<control type="label">
 				<posx>20</posx>
 				<posy>0</posy>
@@ -2229,7 +2229,7 @@
 				<label>$VAR[PlayerActionLabelSmall]</label>
 				<visible>!StringCompare(Window(Home).Property(subtitlemenu), show)</visible>
 			</control>
-			
+
 			<!-- total runtime -->
 			<control type="label">
 				<posx>20</posx>
@@ -2266,7 +2266,7 @@
 				<height>60</height>
 				<texture flipx="true">osd/ff.png</texture>
 			</control>
-			
+
 			<control type="image">
 				<visible>!player.rewinding + !player.forwarding + !player.paused</visible>
 				<left>380</left>
@@ -2275,7 +2275,7 @@
 				<height>80</height>
 				<texture>DefaultAddonInfoLibrary.png</texture>
 			</control>
-			
+
 			<control type="label">
 				<!--elapsed Time-->
 				<left>20</left>
@@ -2328,7 +2328,7 @@
 			</control>
 		</control>
     </include>
-	
+
     <include name="WeatherInfoOSD">
         <!-- weather info displayed in video OSD and video info -->
         <control type="group">
@@ -2338,7 +2338,7 @@
             <height>128</height>
             <visible>!IsEmpty(Window(Weather).Property(Current.FanartCode)) + Skin.String(WeatherIconPack.path)</visible>
             <include>HideOsdConditions</include>
-			
+
             <!--Current Weather-->
             <control type="multiimage">
                 <!--Current Weather Icon-->
@@ -2428,20 +2428,20 @@
             </control>
         </control>
     </include>
-    
+
     <include name="OSDInfoPanel">
-        
+
         <control type="group" id="552233">
             <visible>Skin.HasSetting(EnableOSDInfo)</visible>
             <visible>[Player.Paused + Skin.HasSetting(OSDShowInfoOnPause)] | Player.ShowInfo | Window.IsActive(videoosd)</visible>
-            <visible>!Window.IsActive(infodialog) + !Window.IsActive(extendedprogressdialog)</visible>
+            <visible>!Window.IsActive(infodialog) + !Window.IsActive(extendedprogressdialog) + !Window.IsActive(DialogPlayerProcessInfo.xml)</visible>
             <include>HideOsdConditions</include>
             <include condition="!Skin.HasSetting(EnableOSDInfoLarge)">OSDInfoPanelSmall</include>
             <include condition="Skin.HasSetting(EnableOSDInfoLarge)">OSDInfoPanelLarge</include>
         </control>
-        
+
     </include>
-    
+
     <include name="OSDInfoPanelSmall">
         <!--OSD Info Panel-->
         <!--Info Stuff-->
@@ -2499,11 +2499,11 @@
                     <include>mediaflags_text</include>
                     <visible>Skin.HasSetting(EnableOSDInfoMediaFlags)</visible>
                 </control>
-             
+
              </control>
          </control>
-     </include> 
-    
+     </include>
+
     <include name="OSDInfoPanelSmallOrg">
         <!--OSD Info Panel-->
         <!--Info Stuff-->
@@ -2563,7 +2563,7 @@
             </control>
         </control>
     </include>
-    
+
     <include name="OSDInfoPanelLarge">
          <!--OSD Info Panel-->
          <!--Info Stuff-->
@@ -2624,7 +2624,7 @@
              </control>
          </control>
      </include>
-    
+
     <variable name="OSDImage">
         <value condition="!IsEmpty(Window(Home).Property(SkinHelper.Player.AnimatedPoster))">$INFO[Window(Home).Property(SkinHelper.Player.AnimatedPoster)]</value>
         <value condition="!IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Poster))">$INFO[Window(Home).Property(SkinHelper.Player.Art.Poster)]</value>
@@ -2645,21 +2645,21 @@
         <value condition="Player.HasAudio + IsEmpty(MusicPlayer.Artist) + IsEmpty(MusicPlayer.ChannelName) + !IsEmpty(Window(Home).Property(SkinHelper.Player.AddonName))">$INFO[Window(Home).Property(SkinHelper.Player.AddonName)]</value>
         <value>$LOCALIZE[31040]</value>
 	 </variable>
-     
+
 	 <variable name="OSDLabel2">
         <value condition="Player.HasVideo + !StringCompare(Window(Home).Property(subtitlemenu), show) + VideoPlayer.Content(Episodes)">$INFO[VideoPlayer.Episode]. $INFO[VideoPlayer.Title]</value>
         <value condition="Player.HasVideo + !StringCompare(Window(Home).Property(subtitlemenu), show) + VideoPlayer.Content(livetv) + [!IsEmpty(VideoPlayer.Episode) + !IsEmpty(VideoPlayer.EpisodeName)]">$INFO[VideoPlayer.Title] - $INFO[VideoPlayer.EpisodeName]</value>
         <value condition="Player.HasVideo + !StringCompare(Window(Home).Property(subtitlemenu), show)">$INFO[VideoPlayer.Title]</value>
         <value condition="Player.HasAudio">$INFO[MusicPlayer.Title]</value>
 	 </variable>
-     
+
 	 <variable name="OSDLabel3">
         <value condition="Player.HasVideo + VideoPlayer.Content(livetv) + !IsEmpty(VideoPlayer.NextTitle) + !Window.IsActive(VideoOSD)">$LOCALIZE[19031]: $INFO[VideoPlayer.NextTitle]</value>
         <value condition="Player.HasVideo + !VideoPlayer.Content(livetv) + IsEmpty(VideoPlayer.NextTitle) + !Window.IsActive(VideoOSD) + !IsEmpty(player.chaptercount) + !StringCompare(player.chaptercount,00)">$INFO[player.chapter,[B]$LOCALIZE[21396]:[/B] ,]$INFO[player.chaptercount,/,]$INFO[player.chaptername, - ,]</value>
         <value condition="Player.HasAudio + !IsEmpty(MusicPlayer.Offset(1).Artist) + !Window.IsActive(MusicOSD)">[COLOR=$INFO[Skin.String(OSDSecondaryTextColor)]]$LOCALIZE[554]:[/COLOR] $INFO[MusicPlayer.PlaylistPosition]/$INFO[MusicPlayer.PlaylistLength] - [COLOR=$INFO[Skin.String(OSDSecondaryTextColor)]]$LOCALIZE[19031]:[/COLOR] $INFO[MusicPlayer.Offset(1).Artist] - $INFO[MusicPlayer.Offset(1).Title]</value>
         <value condition="!IsEmpty(VideoPlayer.Genre) + !Window.IsActive(VideoOSD)">$LOCALIZE[515]: $INFO[VideoPlayer.Genre]</value>
 	 </variable>
-     
+
      <variable name="PlayerActionLabel">
 		<value condition="[Player.Paused + Player.Caching] + !Player.Seeking">[B]$LOCALIZE[15107]:[/B] $INFO[Player.CacheLevel]%</value>
 		<value condition="!IsEmpty(Player.SeekStepSize) + ![player.forwarding | player.rewinding] + Player.seeking">[B]$LOCALIZE[31255][/B] $INFO[Player.SeekStepSize]</value>
@@ -2677,7 +2677,7 @@
 		<value condition="player.rewinding32x">[B]$LOCALIZE[31254][/B] x32</value>
 		<value condition="!IsEmpty(player.FinishTime)">$LOCALIZE[31112]: $INFO[Player.FinishTime]</value>
 	 </variable>
-	 
+
 	 <variable name="PlayerActionLabelSmall">
 		<value condition="[Player.Paused + Player.Caching] + !Player.Seeking">[B]$LOCALIZE[15107]:[/B] $INFO[Player.CacheLevel]%</value>
 		<value condition="!IsEmpty(Player.SeekStepSize) + ![player.forwarding | player.rewinding] + Player.seeking">[B]$LOCALIZE[31255][/B] $INFO[Player.SeekStepSize]</value>
@@ -2697,7 +2697,7 @@
 		<value condition="player.rewinding32x">[B]$LOCALIZE[31254][/B] x32</value>
 		<value condition="!IsEmpty(player.FinishTime)">[B]$LOCALIZE[31112]:[/B] $INFO[Player.FinishTime]</value>
 	 </variable>
-	 
+
 	 <variable name="PlayerActionLabelLarge">
 		<value condition="[Player.Paused + Player.Caching] + !Player.Seeking">[B]$LOCALIZE[15107]:[/B] $INFO[Player.CacheLevel]%</value>
 		<value condition="!IsEmpty(Player.SeekStepSize) + ![player.forwarding | player.rewinding] + Player.seeking">[B]$LOCALIZE[31255][/B] $INFO[Player.SeekStepSize]</value>
@@ -2715,12 +2715,12 @@
 		<value condition="player.rewinding32x">[B]$LOCALIZE[31254][/B] x32</value>
 		<value condition="player.paused">[B]$LOCALIZE[31251][/B]</value>
 	 </variable>
-	 
+
 	 <variable name="SubtitleButton">
 		<value condition="!VideoPlayer.SubtitlesEnabled">$LOCALIZE[24022]</value>
 		<value>$LOCALIZE[209]</value>
 	 </variable>
-     
+
      <include name="CurrentPlaylistSideBar">
         <!--fallback background -->
         <control type="group">
@@ -2737,7 +2737,7 @@
 			<animation effect="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="300" time="250" reversible="false">Visible</animation>
 			<animation effect="slide" start="0,0" end="0,400" tween="cubic" easing="out" delay="300" time="250" reversible="false">Hidden</animation>
 		</control>
-		
+
 		<!--clearlogo top right-->
 		<control type="image">
 			<right>40</right>
@@ -2750,7 +2750,7 @@
             <visible>Skin.String(MusicArtistLogo,enabled) | [Skin.String(MusicArtistLogo,osd) + [Player.ShowInfo | Window.IsActive(MusicOSD)]]</visible>
             <include>animation_fade_visible_hidden_delayed</include>
 		</control>
-     
+
         <!-- current playlist -->
         <control type="group">
 			<posx>-660</posx>
@@ -2790,7 +2790,7 @@
                 <aspectratio>stretch</aspectratio>
             </control>
 
-		
+
             <!-- header -->
             <control type="label">
                 <posx>40</posx>
@@ -2801,7 +2801,7 @@
                 <align>left</align>
                 <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                 <label>[UPPERCASE]$LOCALIZE[13350][/UPPERCASE]</label>
-                <visible>!Window.IsActive(infodialog) + !Window.IsActive(extendedprogressdialog)</visible>
+                <visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog)</visible>
             </control>
             <control type="label">
                 <!--playlist info-->
@@ -2813,8 +2813,8 @@
                 <textcolor>$INFO[Skin.String(GeneralHighlightTextColor)]</textcolor>
                 <label>$INFO[Container.NumItems,, $LOCALIZE[31034]] - $INFO[Container.TotalTime]</label>
             </control>
-		
-		
+
+
             <!--Label Menu: -->
             <control type="image">
                 <!--Seperator-->
@@ -2836,7 +2836,7 @@
                 <onleft>5000</onleft>
                 <animation effect="fade" start="100" end="0" time="10" condition="true">Conditional</animation>
             </control>
-            
+
             <!--List ID=5000-->
             <control type="list" id="5000">
                 <posx>0</posx>
@@ -2938,14 +2938,14 @@
             </control>
 
 		</control>
-		
+
      </include>
-     
+
      <include name="HideOsdConditions">
         <visible>
-            !Window.IsActive(PVROSDGuide) + !Window.IsActive(PVROSDTeletext) + !Window.IsActive(PVROSDChannels) + !Window.IsActive(videobookmarks) + 
-            !Window.IsActive(sliderdialog) + !Window.IsActive(subtitlesearch) + !Window.IsActive(script.pseudotv.TVOverlay.xml) + !Window.IsActive(osdaudiodspsettings) + 
-            !Window.IsActive(script.pseudotv.live.TVOverlay.xml) + !Window.IsActive(selectdialog) + !Window.IsActive(musicplaylist)
+            !Window.IsActive(PVROSDGuide) + !Window.IsActive(PVROSDTeletext) + !Window.IsActive(PVROSDChannels) + !Window.IsActive(videobookmarks) +
+            !Window.IsActive(sliderdialog) + !Window.IsActive(subtitlesearch) + !Window.IsActive(script.pseudotv.TVOverlay.xml) + !Window.IsActive(osdaudiodspsettings) +
+            !Window.IsActive(script.pseudotv.live.TVOverlay.xml) + !Window.IsActive(selectdialog) + !Window.IsActive(musicplaylist) + !Window.IsActive(DialogSettings.xml)
         </visible>
      </include>
     
