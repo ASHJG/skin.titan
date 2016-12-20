@@ -23,9 +23,9 @@
 
             <control type="image">
                 <!--<posx>640</posx>-->
-                <posx>500</posx>
+                <posx>600</posx>
                 <posy>0</posy>
-                <width>1740</width>
+                <width>1600</width>
                 <height>100%</height>
                 <texture border="15">diffuse/bgpanel.png</texture>
 				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
@@ -33,7 +33,7 @@
             <control type="image">
                 <posx>500</posx>
                 <posy>0</posy>
-                <width>1740</width>
+                <width>1600</width>
                 <height>100%</height>
                 <texture border="15">diffuse/bgpanel.png</texture>
                 <visible>Window.IsActive(VideoFullScreen.xml)</visible>
@@ -216,16 +216,17 @@
                 <aspectratio align="right" aligny="top">keep</aspectratio>
             </control>
             <!--Button Group-->
-       		<control type="grouplist" id="9000">
-            <posx>500</posx>
+    <control type="grouplist" id="9000">
+                <posx>675</posx>
                 <posy>940</posy>
-	 			<width>1350</width>
+				<onleft>back</onleft>
+				<orientation>horizontal</orientation>
+				<itemgap>20</itemgap>
+                <onup>60</onup>
+                <ondown>60</ondown>
+                <defaultcontrol>5</defaultcontrol>
 
-		 		<onup condition="Container(400).HasNext | Container(400).HasPrevious">60</onup>
-		 			<align>center</align>
-		 			<itemgap>14</itemgap>
-		 			<orientation>horizontal</orientation>
-
+                <!--Switch-->
                 <control type="button" id="5">
 						<description>Switch button</description>
 						<label>Change Channel</label>
@@ -234,6 +235,7 @@
                     <visible>Window.IsActive(PVRGuideInfo)</visible>
 					</control>
 
+                <!--Record-->
 				<control type="button" id="6">
 						<description>Record button</description>
 						<width>265</width>
@@ -241,14 +243,14 @@
                     <visible>Window.IsActive(PVRGuideInfo)</visible>
                     </control>
 
+                <!--play Recording-->
                 <control type="button" id="8">
-                        <!--play Recording-->
                         <width>265</width>
                         <label>19687</label>
                     <include>DialogButtonOther</include>
                     <visible>Window.IsActive(PVRRecordingInfo)</visible>
                 </control>
-
+                <!-- Switch Timer Button -->
                 <control type="button" id="9">
 						<description>Add timer button</description>
 						<label>Record Series</label>
